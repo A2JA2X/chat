@@ -1,0 +1,62 @@
+@import "reset";
+@import "font-awesome";
+@import "group";
+@import "header";
+@import "main_header";
+@import "main_chat";
+@import "config/colors";
+@import "modules/flash";
+@import "modules/user";
+@import "modules/group";
+
+.sidemenu {
+  width: 300px;
+  height: 100%;
+  float: left;
+  color: #ffffff;
+}
+
+.main {
+	width: calc(100vw - 300px);
+	height: 100%;
+  float: left;
+}
+
+.form{
+  background-color: #DDDDDD;
+  box-sizing: border-box;
+  height: 89px;
+  padding: 20px 50px 20px 40px;
+  &__message{
+    border: none;
+    box-sizing: border-box;
+    float: left;
+    height: 50px;
+    padding: 0 10px;
+    width: calc(100% - 150px);
+  }
+  &__mask{
+    background-color: white;
+    float: left;
+    height: 50px;
+    padding-right: 10px;
+    &__image{
+      font-size: 20px;
+      line-height: 50px;
+      cursor: pointer;
+    }
+    .hidden{
+      display: none;
+    }
+  }
+  &__submit{
+    background-color: #38AEF0;
+    border: none;
+    color: white;
+    float: right;
+    font-size: 16px;
+    height: 50px;
+    margin-left: 15px;
+    padding: 0 30px;
+  }
+}

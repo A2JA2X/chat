@@ -1,0 +1,23 @@
+= render 'shared/side_bar'
+.main
+  .main-header
+    .current-group
+      .current-group__header
+        %h2.current-group__header-name
+          = @group.name
+          %ul.current-group__header-member-list
+            Member : 
+            %li.current-group__header-member-list-members
+              - @group.group_users.each do |group_user|
+                = group_user.user.name
+        = link_to('Edit', edit_group_path(@group.id), class: "current-group__header__edit-btn")
+  .messages
+    = render @messages
+  .form
+    = form_for [@group, @message], id: 'new_message' do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
