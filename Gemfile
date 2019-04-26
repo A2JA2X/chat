@@ -54,6 +54,7 @@ end
 
 group :production do
   gem 'unicorn', '5.4.1'
+  gem 'fog-aws'
 end
 
 gem 'haml-rails'
@@ -62,4 +63,3 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog-aws'
